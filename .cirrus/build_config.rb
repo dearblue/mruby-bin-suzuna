@@ -15,6 +15,8 @@ MRuby::Build.new do |conf|
   linker.library_paths << "/usr/local/lib"
   linker.libraries << "pthread"
 
+  #enable_test
+  #enable_bintest
   #enable_debug
 
   exclude_gems = %w(mruby-exit)
@@ -40,5 +42,5 @@ MRuby::Build.new do |conf|
   gem mgem: "mruby-lz4"
   gem mgem: "mruby-lzma"
   gem mgem: "mruby-zstd"
-  gem __dir__
+  gem File.join(__dir__, "..")
 end
